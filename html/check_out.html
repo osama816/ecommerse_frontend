@@ -1,0 +1,69 @@
+<section class="min-h-screen pb-12 bg-(--bg) text-(--onbg) p-4 md:p-8 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8 tracking-tight">Checkout</h1>
+
+        <div class="grid  grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-(--bgsecond) md:my-10 shadow-md shadow-cyan-100 p-6 rounded-3xl border-2 border-(--onbg)/10 ">
+                <h2 class="text-xl font-semibold mb-6">Shipping Information</h2>
+                <form id="checkoutForm" class="space-y-4">
+                    <div>
+                        <label class="block mb-2 text-sm opacity-70">Full Name</label>
+                        <input type="text" id="fullname" required
+                            class="w-full p-3 rounded-xl bg-(--bg) border border-(--onbg)/20 focus:outline-none focus:border-(--onbg)/50">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm opacity-70">Shipping Address</label>
+                        <textarea id="address" required
+                            class="w-full p-3 rounded-xl bg-(--bg) border border-(--onbg)/20 focus:outline-none focus:border-(--onbg)/50"></textarea>
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm opacity-70">Phone Number</label>
+                        <input type="tel" id="phone" required
+                            class="w-full p-3 rounded-xl bg-(--bg) border border-(--onbg)/20 focus:outline-none focus:border-(--onbg)/50">
+                    </div>
+
+                    <h2 class="text-xl font-semibold mt-8 mb-4">Payment Method</h2>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 p-3 border border-(--onbg)/20 rounded-xl cursor-pointer ">
+                            <input type="radio" name="payment" value="cash on delivery" checked>
+                            <span>Cash on Delivery</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-3 border border-(--onbg)/20 rounded-xl cursor-pointer hover:bg-(--onbg)/5 ">
+                            <input type="radio" name="payment" value="credit card">
+                            <span>Credit Card </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-(--bgsecond) p-6 md:my-10 rounded-3xl border-2 border-(--onbg)/10 shadow-md shadow-cyan-100 h-fit">
+                <h2 class="text-xl font-semibold mb-6">Order Summary</h2>
+                <div id="checkoutItems" class="space-y-4 mb-6 max-h-60 overflow-y-auto pr-2">
+                </div>
+
+                <hr class="border-(--onbg)/10 my-4">
+
+                <div class="space-y-2">
+                    <div class="flex justify-between opacity-80">
+                        <span>Subtotal</span>
+                        <span id="checkoutSubtotal">$0</span>
+                    </div>
+                    <div class="flex justify-between text-red-500">
+                        <span>Discount</span>
+                        <span id="checkoutDiscount">-$0</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-lg pt-4">
+                        <span>Total Amount</span>
+                        <span id="checkoutTotal">$0</span>
+                    </div>
+                </div>
+
+                <button form="checkoutForm" type="submit"
+                    class="w-full mt-8 bg-(--onbg) text-(--bg) py-4 rounded-full font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-lg">
+                    Confirm Order
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
