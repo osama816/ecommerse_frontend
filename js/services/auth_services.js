@@ -1,5 +1,4 @@
-import { isValidEmail, isValidPassword, isValidName, encrypt, decrypt } from '../utilites/validation.js';
-
+import { isValidEmail, isValidPassword, isValidName, encrypt, decrypt } from '../Utilites/validation.js';
 export async function registerUser(userData) {
     if (!isValidName(userData.fullName)) {
         throw new Error('Full name must be at least 3 characters');
