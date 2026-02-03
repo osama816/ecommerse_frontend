@@ -19,7 +19,7 @@ export function generateInvoice(order) {
 
     // Header
     doc.setFontSize(22);
-    text("STORE NAME", 20, 30, { bold: true });
+    text("STORE Shop.co", 20, 30, { bold: true });
 
     doc.setFontSize(10);
     text("Date: " + new Date(order.orderDate).toLocaleDateString(), 190, 30, { align: 'right' });

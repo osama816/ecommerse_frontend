@@ -174,9 +174,11 @@ function renderProducts(allProducts) {
     productsContainer.innerHTML = ""
 
     if (allProducts.length > 0) {
-        allProducts.forEach(item => {
+        allProducts.forEach((item, index) => {
+            const animationClass = index % 2 === 0 ? "animate-side" : "animate-top";
+            const delay = (index * 0.1).toFixed(1);
             productsContainer.innerHTML += `
-            <div class="group ">
+            <div class="group ${animationClass}" style="animation-delay: ${delay}s">
                 <a href="index.html#product?id=${item.id}" class="cursor-pointer">
                 <div class="bg-[#F0EEED] rounded-3xl overflow-hidden mb-4 relative aspect-[1/1.1]">
                     <img src="${item.mainImage}" alt="Product"
@@ -184,14 +186,14 @@ function renderProducts(allProducts) {
                 </div>
                 <h3 class="font-bold text-base md:text-lg mb-1 truncate">${item.name}</h3>
                  <div class="flex items-center gap-2 mb-3">
-                                        <div class="rating" style="--rating: ${item.rating}"></div>
-                                        <span id="ratingText" class="text-xl">${item.rating} / 5</span>
-                  </div>
-                    ${item.discountPercentage ? `<div class="flex items-center space-x-2">
-                    <span class="font-bold text-xl">$${parseInt(item.price - item.price * item.discountPercentage / 100)}</span>
-                    <span class="text-gray-400 font-bold line-through">$${parseInt(item.price)}</span>
-                    <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded-full">-${item.discountPercentage}%</span>
-                </div>` : `<div class="font-bold text-xl ">$${parseInt(item.price)}</div>`}
+                                         <div class="rating" style="--rating: ${item.rating}"></div>
+                                         <span id="ratingText" class="text-xl">${item.rating} / 5</span>
+                   </div>
+                     ${item.discountPercentage ? `<div class="flex items-center space-x-2">
+                     <span class="font-bold text-xl">$${parseInt(item.price - item.price * item.discountPercentage / 100)}</span>
+                     <span class="text-gray-400 font-bold line-through">$${parseInt(item.price)}</span>
+                     <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded-full">-${item.discountPercentage}%</span>
+                 </div>` : `<div class="font-bold text-xl ">$${parseInt(item.price)}</div>`}
                 </a>
             </div>
             `

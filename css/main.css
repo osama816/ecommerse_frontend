@@ -28,34 +28,34 @@
    CSS Variables (Theme Colors & Fonts)
    =============================== */
 :root {
-  /* Core Palette */
-  --bg: #ffffff;
-  --onbg: #000000;
-  --bgsecond: #f2f0f1;
+  /* Core Palette (Soft Neutral) */
+  --bg: #fbfbfc;
+  --onbg: #111111;
+  --bgsecond: #f0f0f2;
 
   /* Semantic Mappings */
-  --main-bg: #ffffff;
-  --sec-bg: #f0f0f0;
-  --main-text: #000000;
-  --sec-text: rgba(0, 0, 0, 0.6);
-  --border: rgba(0, 0, 0, 0.1);
+  --main-bg: #fbfbfc;
+  --sec-bg: #f5f5f5;
+  --main-text: #111111;
+  --sec-text: rgba(17, 17, 17, 0.6);
+  --border: rgba(17, 17, 17, 0.08);
 
   /* Fonts */
   --fprim: "Satoshi", sans-serif;
   --fsecond: "Montserrat", sans-serif;
 }
 
-/* Dark theme overrides */
+/* Dark theme overrides (Charcoal Neutral) */
 .dark {
-  --bg: #000000;
-  --onbg: #ffffff;
-  --bgsecond: #1a1a1a;
+  --bg: #0f0f11;
+  --onbg: #ededed;
+  --bgsecond: #1c1c1e;
 
-  --main-bg: #000000;
-  --sec-bg: #121212;
-  --main-text: #ffffff;
-  --sec-text: rgba(255, 255, 255, 0.6);
-  --border: rgba(255, 255, 255, 0.1);
+  --main-bg: #0f0f11;
+  --sec-bg: #161618;
+  --main-text: #ededed;
+  --sec-text: rgba(237, 237, 237, 0.6);
+  --border: rgba(237, 237, 237, 0.08);
 }
 
 /* ===============================
@@ -66,6 +66,26 @@ body {
   color: var(--onbg);
   font-family: var(--fprim);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Modern Global Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--onbg);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sec-text);
 }
 
 /* Toast Notifications */
@@ -239,21 +259,82 @@ input[type="range"]::-moz-range-thumb {
 
 /* Scrollbar */
 .container-with-scroll::-webkit-scrollbar {
-  height: 6px;
+  height: 3px;
 }
 
 /* track */
 .container-with-scroll::-webkit-scrollbar-track {
-  background: var(--bgsecond);
-  border-radius: 10px;
+  background: none;
+  border-radius: 5px;
 }
 
 /* progress */
 .container-with-scroll::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .container-with-scroll::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* ===============================
+   Page Transition Animations
+   =============================== */
+
+@keyframes fadeInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-side {
+  animation: fadeInFromSide 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-top {
+  animation: fadeInFromTop 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Staggered animation for children */
+.animate-stagger>* {
+  opacity: 0;
+}
+
+.animate-stagger>*:nth-child(1) {
+  animation: fadeInFromSide 0.6s ease-out 0.1s forwards;
+}
+
+.animate-stagger>*:nth-child(2) {
+  animation: fadeInFromSide 0.6s ease-out 0.2s forwards;
+}
+
+.animate-stagger>*:nth-child(3) {
+  animation: fadeInFromSide 0.6s ease-out 0.3s forwards;
+}
+
+.animate-stagger>*:nth-child(4) {
+  animation: fadeInFromSide 0.6s ease-out 0.4s forwards;
+}
+
+.animate-stagger>*:nth-child(5) {
+  animation: fadeInFromSide 0.6s ease-out 0.5s forwards;
 }

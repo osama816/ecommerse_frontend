@@ -1,62 +1,47 @@
-<div class="border-b border-(--onbg) container mx-auto px-4">
+<div class="border-b border-(--onbg) container mx-auto px-4 sticky top-0 bg-(--bg) z-50 animate-top">
   <div class="flex h-16 items-center justify-between">
     <!-- Left: Logo + Nav -->
     <div class="flex items-center gap-4">
       <!-- Mobile menu button -->
-      <button
-        class="md:hidden text-xl"
-        onclick="document.getElementById('mobile-menu')
-    document.getElementById('mobile-menu').classList.toggle('scale-y-0')
-    document.getElementById('mobile-menu').classList.toggle('opacity-0')"
-      >
+      <button class="md:hidden text-xl"
+        onclick="const m=document.getElementById('mobile-menu'); m.classList.toggle('scale-y-0'); m.classList.toggle('opacity-0')">
         <i class="fas fa-bars"></i>
       </button>
 
       <!-- Logo -->
-      <a
-        href="#home"
-        class="text-2xl font-bold uppercase font-(family-name:--fsecond)"
-      >
+      <a href="#home" class="text-2xl font-bold uppercase font-(family-name:--fsecond)">
         Shop.co
       </a>
 
       <!-- Desktop Nav -->
-      <nav
-        class="hidden md:flex items-center gap-2 text-sm lg:text-base lg:gap-6"
-      >
+      <nav class="hidden md:flex items-center gap-2 text-sm lg:text-base lg:gap-6">
         <a class="nav-link" href="#products">Shop</a>
         <a class="nav-link" href="#top-selling">On Sale</a>
         <a class="nav-link" href="#new-arrival">New Arrivals</a>
-        <a class="nav-link" href="#cart">Cart</a>
+        <a class="nav-link" href="#brands">Brands</a>
       </nav>
     </div>
 
     <!-- Right Actions -->
     <div class="flex items-center gap-2">
       <!-- Search -->
-      <form id="search-form" class="hidden md:block relative">
+      <form id="search-form" class="hidden md:block relative group">
         <i
-          class="fas fa-search absolute right-3 top-1/2 -translate-y-1/2 opacity-60"
-        ></i>
-        <input
-          type="search"
-          class="bg-(--bgsecond) text-(--onbg) rounded-md py-1.5 pl-3 pr-9 outline-none"
-          id="search-input"
-          placeholder="Search products..."
-        />
+          class="fas fa-search absolute right-3 top-1/2 -translate-y-1/2 opacity-40 group-focus-within:opacity-100 transition-opacity"></i>
+        <input type="search"
+          class="bg-(--bgsecond) text-(--onbg) rounded-full py-2 pl-4 pr-10 outline-none border border-transparent focus:border-(--onbg)/20 transition-all w-48 lg:w-64"
+          id="search-input" placeholder="Search products..." />
       </form>
 
       <!-- Theme -->
-      <button
-        id="theme-toggle"
-        class="p-2 rounded-xl bg-(--bgsecond) text-(--onbg) active:scale-95 transition"
-      >
-        <span id="sun-icon" class="hidden">☀️</span>
-        <span id="moon-icon">🌙</span>
+      <button id="theme-toggle"
+        class="p-2.5 rounded-full bg-(--bgsecond) text-(--onbg) active:scale-90 transition hover:bg-(--onbg) hover:text-(--bg)">
+        <span id="sun-icon" class="hidden text-sm">☀️</span>
+        <span id="moon-icon" class="text-sm">🌙</span>
       </button>
 
       <!-- Cart -->
-      <a href="#cart" class="text-xl">
+      <a href="#cart" class="p-2.5 rounded-full hover:bg-(--bgsecond) transition text-xl">
         <i class="fa-solid fa-cart-shopping"></i>
       </a>
 
@@ -66,20 +51,18 @@
 </div>
 
 <!-- Mobile Menu -->
-<div
-  id="mobile-menu"
-  class="md:hidden origin-top scale-y-0 opacity-0 absolute z-50 transition-all duration-300 ease-out bg-(--bg) border-t border-(--onbg)"
->
+<div id="mobile-menu"
+  class="md:hidden origin-top scale-y-0 opacity-0 fixed left-0 right-0 top-16 z-40 transition-all duration-300 ease-out bg-(--bg) border-b border-(--onbg) shadow-xl">
   <nav class="flex flex-col gap-2 p-4">
-    <a class="mobile-link" href="#products">Shop</a>
-    <a class="mobile-link" href="#top-selling">On Sale</a>
-    <a class="mobile-link" href="#new-arrival">New Arrivals</a>
-    <a class="mobile-link" href="#cart">Cart</a>
+    <a class="mobile-link text-lg font-medium" href="#products">Shop</a>
+    <a class="mobile-link text-lg font-medium" href="#top-selling">On Sale</a>
+    <a class="mobile-link text-lg font-medium" href="#new-arrival">New Arrivals</a>
+    <a class="mobile-link text-lg font-medium" href="#cart">Cart</a>
 
-    <input
-      type="search"
-      placeholder="Search..."
-      class="mt-3 p-2 rounded-md bg-(--bgsecond) outline-none"
-    />
+    <div class="relative mt-4">
+      <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 opacity-40"></i>
+      <input type="search" placeholder="Search..."
+        class="w-full p-3 pl-10 rounded-xl bg-(--bgsecond) outline-none border border-transparent focus:border-(--onbg)/20" />
+    </div>
   </nav>
 </div>

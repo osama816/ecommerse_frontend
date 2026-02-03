@@ -72,6 +72,21 @@ async function router() {
 
   // Load page HTML and JavaScript
   await loadComponent("content", route.html);
+
+  // Apply entry animations to main sections
+  const content = document.getElementById("content");
+  if (content) {
+    const mainSections = content.querySelectorAll("section");
+    mainSections.forEach((section, index) => {
+      // Add staggered delay
+      section.style.animationDelay = `${index * 0.4}s`;
+
+      // Alternate animations for visual variety
+      const animationClass = index % 2 === 0 ? "animate-side" : "animate-top";
+      section.classList.add(animationClass);
+    });
+  }
+
   loadJS(route.js);
 }
 

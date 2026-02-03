@@ -1,4 +1,11 @@
 {
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/main.css -o ./css/output.css --watch",
+    "build": "npx tailwindcss -i ./css/main.css -o ./css/output.css --minify",
+    "start": "serve ."
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18"
   },

@@ -1,12 +1,12 @@
-import * as productServices from '../services/product_services.js';
 import { getCurrentUser } from '../services/auth_services.js';
 import { massage } from '../Utilites/helpers.js';
 import { createOrder } from '../services/checkout.js';
+import * as cartServices from '../services/cart_services.js';
 const user = getCurrentUser();
 let cart = [];
 
 if (user) {
-    cart = await productServices.getCart(user.email);
+    cart = await cartServices.getCart(user.email);
 } else {
     window.location.hash = '#login';
 }

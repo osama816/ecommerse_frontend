@@ -1,13 +1,14 @@
 
-import * as productServices from '../services/product_services.js';
 import { getCurrentUser } from '../services/auth_services.js';
 import { massage } from '../Utilites/helpers.js';
+import * as cartServices from '../services/cart_services.js';
+
 const currentUser = getCurrentUser();
 let cart = [];
 if (currentUser) {
-    cart = await productServices.getCart(currentUser.email)
+    cart = await cartServices.getCart(currentUser.email)
 } else {
-    cart = await productServices.getCart('guest')
+    cart = await cartServices.getCart('guest')
 }
 
 let currentDiscount = 0;
@@ -79,9 +80,9 @@ function updateSummary() {
 window.removeItem = function (productId) {
     cart = cart.filter(item => item.productId != productId);
     if (currentUser) {
-        productServices.updateCart(currentUser.email, cart)
+        cartServices.updateCart(currentUser.email, cart)
     } else {
-        productServices.updateCart('guest', cart)
+        cartServices.updateCart('guest', cart)
     }
     displayCartItems();
 };
@@ -93,9 +94,9 @@ window.updateQuantity = function (productId, change) {
         if (item.qty < 1) item.qty = 1;
     }
     if (currentUser) {
-        productServices.updateCart(currentUser.email, cart)
+        cartServices.updateCart(currentUser.email, cart)
     } else {
-        productServices.updateCart('guest', cart)
+        cartServices.updateCart('guest', cart)
     }
     displayCartItems();
 };
@@ -114,7 +115,7 @@ document.getElementById('applyPromo')?.addEventListener('click', () => {
 
         massage('Promo code applied! 20% off', 'success');
     }
-    
+
     else {
         currentDiscount = 0;
         massage('Invalid promo code', 'error');
