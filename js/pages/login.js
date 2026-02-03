@@ -1,5 +1,5 @@
-import { massage } from '../Utilites/helpers.js';
-import { initAuthAnimation, setupPasswordToggle } from '../Utilites/auth_ui.js';
+import { massage } from '../Utilities/helpers.js';
+import { initAuthAnimation, setupPasswordToggle } from '../Utilities/auth_ui.js';
 import * as authService from '../services/auth_services.js';
 import { mergeGuestCartToUser } from '../services/cart_services.js';
 

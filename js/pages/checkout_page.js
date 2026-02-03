@@ -1,5 +1,5 @@
 import { getCurrentUser } from '../services/auth_services.js';
-import { massage } from '../Utilites/helpers.js';
+import { massage } from '../Utilities/helpers.js';
 import { createOrder } from '../services/checkout.js';
 import * as cartServices from '../services/cart_services.js';
 const user = getCurrentUser();

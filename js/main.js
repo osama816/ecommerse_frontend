@@ -1,7 +1,7 @@
 import { routes } from "./config/routes.js";
 
-import { initTheme } from "./Utilites/theme.js";
-import { renderAuthButtons } from "./Utilites/renderAuthButtons.js";
+import { initTheme } from "./Utilities/theme.js";
+import { renderAuthButtons } from "./Utilities/renderAuthButtons.js";
 import * as authService from "./services/auth_services.js";
 import { getAllProducts } from "./services/product_services.js";
 // import * as checkout from './services/checkout.js';
