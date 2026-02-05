@@ -168,11 +168,11 @@
         "categoryId": 1,
         "price": 359,
         "discountPercentage": 11,
-        "mainImage": "assets\\images\\product\\Striped T-Shirt.webp",
+        "mainImage": "../assets/images/product/Striped T-Shirt.webp",
         "images": [
-            "assets\\images\\product\\Striped T-Shirt1.webp",
-            "assets\\images\\product\\Striped T-Shirt2.webp",
-            "assets\\images\\product\\Striped T-Shirt3.webp"
+            "../assets/images/product/Striped T-Shirt.webp",
+            "../assets/images/product/Striped T-Shirt.webp",
+            "../assets/images/product/Striped T-Shirt.webp"
         ],
         "sizes": [
             "M",
@@ -1170,53 +1170,6 @@
                 "rating": 5,
                 "comment": "Best sports shorts I've ever bought!",
                 "createdAt": "2026-01-21T13:25:00Z"
-            }
-        ]
-    },
-    {
-        "id": 309,
-        "name": "Casual Summer Shorts",
-        "slug": "casual-summer-shorts",
-        "description": "Perfect shorts for summer",
-        "categoryId": 3,
-        "price": 339,
-        "discountPrice": 299,
-        "mainImage": "shorts9-main.jpg",
-        "images": [
-            "shorts9-1.jpg"
-        ],
-        "sizes": [
-            "M",
-            "L"
-        ],
-        "style": "casual",
-        "rating": 4.2,
-        "stock": 27,
-        "isActive": true,
-        "reviews": [
-            {
-                "id": 64,
-                "productId": 309,
-                "userName": "Jeffrey",
-                "rating": 4,
-                "comment": "Lightweight and perfect for hot summer days.",
-                "createdAt": "2026-01-14T10:40:00Z"
-            },
-            {
-                "id": 65,
-                "productId": 309,
-                "userName": "Ryan",
-                "rating": 3,
-                "comment": "Simple but practical summer shorts.",
-                "createdAt": "2026-01-17T12:55:00Z"
-            },
-            {
-                "id": 66,
-                "productId": 309,
-                "userName": "Gary",
-                "rating": 4,
-                "comment": "Comfortable fit, suitable fabric.",
-                "createdAt": "2026-01-20T15:30:00Z"
             }
         ]
     },

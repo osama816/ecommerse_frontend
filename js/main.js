@@ -95,6 +95,10 @@ async function router() {
 loadComponent("header", "html/header.html").then(() => {
   initTheme();
   renderAuthButtons();
+  const script = document.createElement("script");
+  script.src = "js/pages/header.js"
+  script.type = "module";
+  document.body.appendChild(script);
 });
 
 // Load footer

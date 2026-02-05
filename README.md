@@ -1,5 +1,7 @@
 # 🛒 Shop.co - Modern E-Commerce Platform
 
+**🔗 Live Demo:** [shopco-shop.vercel.app](https://shopco-shop.vercel.app/)
+
 A premium, fast, and responsive E-Commerce Single Page Application (SPA) built with a modern architecture using **Vanilla JavaScript (ES6+ Modules)**, **Tailwind CSS v4**, and smooth **CSS Transitions**.
 
 ![Banner](https://img.shields.io/badge/Status-Project_Completed-success?style=for-the-badge)
